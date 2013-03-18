@@ -1,15 +1,15 @@
 dependencies: \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofURLFileLoader.cpp \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofURLFileLoader.cpp \
   ../../../../libs/openFrameworks/utils/ofURLFileLoader.h \
   ../../../../libs/openFrameworks/utils/ofThread.h \
   ../../../../libs/openFrameworks/utils/ofConstants.h \
   ../../../../libs/glew/include/GL/glew.h \
   ../../../../libs/tess2/include/tesselator.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofTypes.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofTypes.h \
   ../../../../libs/openFrameworks/types/ofColor.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
   ../../../../libs/openFrameworks/math/ofVec2f.h \
   ../../../../libs/openFrameworks/math/ofVec4f.h \
   ../../../../libs/poco/include/Poco/Mutex.h \
@@ -31,7 +31,7 @@ dependencies: \
   ../../../../libs/poco/include/Poco/RefCountedObject.h \
   ../../../../libs/poco/include/Poco/AtomicCounter.h \
   ../../../../libs/poco/include/Poco/AutoPtr.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/events/ofEvents.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/events/ofEvents.h \
   ../../../../libs/openFrameworks/events/ofEventUtils.h \
   ../../../../libs/poco/include/Poco/FIFOEvent.h \
   ../../../../libs/poco/include/Poco/AbstractEvent.h \
@@ -55,9 +55,9 @@ dependencies: \
   ../../../../libs/poco/include/Poco/File_UNIX.h \
   ../../../../libs/poco/include/Poco/Condition.h \
   ../../../../libs/poco/include/Poco/ScopedUnlock.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/app/ofAppRunner.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofRectangle.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofLog.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/app/ofAppRunner.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofRectangle.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofLog.h \
   ../../../../libs/openFrameworks/utils/ofUtils.h \
   ../../../../libs/poco/include/Poco/Net/HTTPClientSession.h \
   ../../../../libs/poco/include/Poco/Net/Net.h \

@@ -68,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		569EB07216F7756E00064733 /* Particle.cl */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.opencl; name = Particle.cl; path = data/MSAOpenCL/Particle.cl; sourceTree = "<group>"; };
 		92FC853E16F68117000AA59C /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		92FC854016F68489000AA59C /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = ../../../../../../../../../../System/Library/Frameworks/OpenCL.framework; sourceTree = "<group>"; };
 		92FC855F16F68713000AA59C /* MSAOpenCL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MSAOpenCL.cpp; sourceTree = "<group>"; };
@@ -141,6 +142,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		569EB07316F7757200064733 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				569EB07216F7756E00064733 /* Particle.cl */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		92FC854216F68713000AA59C /* ofxMSAOpenCL */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +259,7 @@
 			children = (
 				92FC853E16F68117000AA59C /* OpenCL.framework */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+				569EB07316F7757200064733 /* data */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
@@ -408,6 +418,7 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
@@ -442,6 +453,7 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",

@@ -1,9 +1,9 @@
 dependencies: \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMatrix4x4.cpp \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMatrix4x4.cpp \
   ../../../../libs/openFrameworks/math/ofMatrix4x4.h \
   ../../../../libs/openFrameworks/math/ofVec3f.h \
   ../../../../libs/openFrameworks/math/ofVec2f.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofConstants.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofConstants.h \
   ../../../../libs/glew/include/GL/glew.h \
   ../../../../libs/tess2/include/tesselator.h \
   ../../../../libs/openFrameworks/math/ofVec4f.h \

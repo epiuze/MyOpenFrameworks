@@ -1,5 +1,5 @@
 dependencies: \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofUtils.cpp \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/utils/ofUtils.cpp \
   ../../../../libs/openFrameworks/utils/ofUtils.h \
   ../../../../libs/openFrameworks/utils/ofConstants.h \
   ../../../../libs/glew/include/GL/glew.h \
@@ -15,30 +15,30 @@ dependencies: \
   ../../../../libs/poco/include/Poco/Types.h \
   ../../../../libs/poco/include/Poco/Timestamp.h \
   ../../../../libs/poco/include/Poco/File_UNIX.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofTypes.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofTypes.h \
   ../../../../libs/openFrameworks/types/ofColor.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMath.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofPoint.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofVec3f.h \
   ../../../../libs/openFrameworks/math/ofVec2f.h \
   ../../../../libs/openFrameworks/math/ofVec4f.h \
   ../../../../libs/poco/include/Poco/Mutex.h \
   ../../../../libs/poco/include/Poco/Exception.h \
   ../../../../libs/poco/include/Poco/ScopedLock.h \
   ../../../../libs/poco/include/Poco/Mutex_POSIX.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofImage.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofTexture.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofRectangle.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofBaseTypes.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofMesh.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLUtils.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPixels.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMatrix4x4.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofImage.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofTexture.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofRectangle.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/types/ofBaseTypes.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/3d/ofMesh.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLUtils.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPixels.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/math/ofMatrix4x4.h \
   ../../../../libs/openFrameworks/math/ofQuaternion.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofGraphics.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLRenderer.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.h \
-  /Volumes/Cortex/Users/piuze/Documents/workspace_work/OpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/app/ofAppRunner.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofGraphics.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/gl/ofGLRenderer.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/graphics/ofPolyline.h \
+  /Users/epiuze/Documents/workspace/work/MyOpenFrameworks/libs/openFrameworksCompiled/project/osx/../../../openFrameworks/app/ofAppRunner.h \
   ../../../../libs/poco/include/Poco/String.h \
   ../../../../libs/poco/include/Poco/Ascii.h \
   ../../../../libs/poco/include/Poco/LocalDateTime.h \

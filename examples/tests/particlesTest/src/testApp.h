@@ -13,7 +13,6 @@
 #pragma once
 
 #include "ofMain.h"
-#include <vector>
 
 class testApp : public ofBaseApp{
 	

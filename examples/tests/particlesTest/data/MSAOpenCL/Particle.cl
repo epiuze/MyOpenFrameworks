@@ -2,12 +2,15 @@
 #define CENTER_FORCE	0.007f
 #define MOUSE_FORCE		300.0f
 #define MIN_SPEED		0.1f
+#define ALPHA_NORM		0.0f
 
 
 typedef struct{
 	float2 vel;
 	float mass;
-	float dummy;		// need this to make sure the float2 vel is aligned to a 16 byte boundary
+    float alpha;
+//    float4 col;
+//	float dummy;		// need this to make sure the float2 vel is aligned to a 16 byte boundary
 } Particle;
 
 
@@ -25,7 +28,13 @@ __kernel void updateParticle(__global Particle* particles, __global float2* posB
 	float speed2 = dot(p->vel, p->vel);
 	if(speed2<MIN_SPEED) posBuffer[id] = mousePos + diff * (1.0f + p->mass);
 
+    // Update position (Forward Euler with time step = 1)
 	posBuffer[id] += p->vel;
+    
+    // Update forces (here it's only damping)
 	p->vel *= DAMP;
+    
+    // Update alpha value
+//    p->alpha = 0f + speed2 * ALPHA_NORM;
 }
 

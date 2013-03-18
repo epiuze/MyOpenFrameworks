@@ -12,19 +12,29 @@
 #include "testApp.h"
 #include "MSAOpenCL.h"
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <sstream>
+//#include <iomanip>
+//#include <math.h>
+//#include <vector>
+//#include <string>
+
 #define USE_OPENGL_CONTEXT
 
 
-#define NUM_PARTICLES (500*500)
-#define POINT_SIZE 1
-
+#define NUM_PARTICLES (1000*1000)
+#define POINT_SIZE 2
+const float CALPHA = 0.1f;
 
 typedef struct{
 	float2 vel;
 	float mass;
+//	float4 col;
+    float alpha;
     
     // need this to make sure the float2 vel is aligned to a 16 byte boundary
-	float dummy;
+//	float dummy;
 } Particle;
 
 
@@ -41,6 +51,9 @@ msa::OpenCLBuffer	clMemParticles;		// stores above data
 
 float2				particlesPos[NUM_PARTICLES];
 msa::OpenCLBuffer	clMemPosVBO;		// stores above data
+
+float4				particlesCol[NUM_PARTICLES];
+//msa::OpenCLBuffer	clMemColVBO;		// stores above data
 
 GLuint				vbo[1];
 GLuint				cvbo[1];
@@ -61,19 +74,26 @@ void testApp::setup(){
 	for(int i=0; i<NUM_PARTICLES; i++) {
 		Particle &p = particles[i];
 		p.vel.set(0, 0);
-		p.mass = ofRandom(0.5, 1);		
+		p.mass = ofRandom(0.5, 1);
+        p.alpha = CALPHA;
+        
 		particlesPos[i].set(ofRandomWidth(), ofRandomHeight());
+        particlesCol[i].set(ofRandom(1), ofRandom(1), ofRandom(1), CALPHA);
 	}
 	
-    // Create the VBOs
+    /*
+     * Create the VBOs
+     */
+    
+    // Position buffer
 	glGenBuffers(1, vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float2) * NUM_PARTICLES, particlesPos, GL_DYNAMIC_COPY);
 
-    // Color
-//	glGenBuffers(1, vbo);
-//	glBindBuffer(GL_ARRAY_BUFFER, cvbo[0]);
-//	glBufferData(GL_ARRAY_BUFFER, sizeof(Vec4) * NUM_PARTICLES, particlesPos, GL_DYNAMIC_COPY);
+    // Color buffer
+	glGenBuffers(1, cvbo);
+	glBindBuffer(GL_ARRAY_BUFFER, cvbo[0]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float4) * NUM_PARTICLES, particlesCol, GL_DYNAMIC_COPY);
     
     // Return
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -118,33 +138,53 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 
-	glColor4f(0.0f, 1.0f, 1.0f, 0.1f);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
+//	glColor4f(0.0f, 1.0f, 1.0f, 0.1f);
     
 #ifdef USE_OPENGL_CONTEXT
+    printf("Operating in opencl mode...");
 	opencl.finish();
-#else	
+#else
+    printf("Operating in opengl mode...");
+//	opencl.readBuffer(sizeof(Particle) * NUM_PARTICLES, clMemParticles, particles);
+//	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(Particle) * NUM_PARTICLES, particles);
+    
 	opencl.readBuffer(sizeof(Vec2) * NUM_PARTICLES, clMemPosVBO, particlesPos);
 	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(Vec2) * NUM_PARTICLES, particlesPos);
 #endif	
+
+    // Bind color array
+	glBindBuffer(GL_ARRAY_BUFFER, cvbo[0]);
     
-    // Vertex array
-	glEnableClientState(GL_VERTEX_ARRAY);
+    // Update colors
+//    for(int i=0; i<NUM_PARTICLES; i++) {
+//		Particle &p = particles[i];
+////        particlesCol[i].set(ofRandom(1), ofRandom(1), ofRandom(1), CALPHA);
+//        particlesCol[i].set(particlesCol[i].x, particlesCol[i].y, particlesCol[i].z, p.alpha);
+//	}
+    
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float4) * NUM_PARTICLES, particlesCol, GL_DYNAMIC_COPY);
+    glColorPointer(4, GL_FLOAT, 0, 0);
+
+    // Bind vertex array
+	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 	glVertexPointer(2, GL_FLOAT, 0, 0);
     
-    // Color array
-    // Set random particle colors
-//    glEnableClientState(GL_COLOR_ARRAY);
-//    glColorPointer(4, GL_FLOAT, 0, 0);
+    // Enable states
+    glEnableClientState(GL_COLOR_ARRAY);
+	glEnableClientState(GL_VERTEX_ARRAY);
     
+    // Draw particles
 	glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
     
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	
-	
-	glColor3f(1, 1, 1);
+    glDisableClientState(GL_COLOR_ARRAY);
+    glDisableClientState(GL_VERTEX_ARRAY);
+
+	glColor4f(0, 1, 0, 1);
 	string info = "fps: " + ofToString(ofGetFrameRate()) + "\nnumber of particles: " + ofToString(NUM_PARTICLES);
 	ofDrawBitmapString(info, 20, 20);
+
 }
 
 //--------------------------------------------------------------
@@ -153,7 +193,12 @@ void testApp::exit() {
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-	ofToggleFullscreen();
+	if(key == 'f'){
+        ofToggleFullscreen();
+	}
+    else if(key == 'r'){
+        setup();
+    }
 }
 
 //--------------------------------------------------------------
