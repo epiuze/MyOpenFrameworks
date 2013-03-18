@@ -43,6 +43,7 @@ float2				particlesPos[NUM_PARTICLES];
 msa::OpenCLBuffer	clMemPosVBO;		// stores above data
 
 GLuint				vbo[1];
+GLuint				cvbo[1];
 
 
 //--------------------------------------------------------------
@@ -64,12 +65,19 @@ void testApp::setup(){
 		particlesPos[i].set(ofRandomWidth(), ofRandomHeight());
 	}
 	
-	glGenBuffersARB(1, vbo);
+    // Create the VBOs
+	glGenBuffers(1, vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float2) * NUM_PARTICLES, particlesPos, GL_DYNAMIC_COPY_ARB);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float2) * NUM_PARTICLES, particlesPos, GL_DYNAMIC_COPY);
+
+    // Color
+//	glGenBuffers(1, vbo);
+//	glBindBuffer(GL_ARRAY_BUFFER, cvbo[0]);
+//	glBufferData(GL_ARRAY_BUFFER, sizeof(Vec4) * NUM_PARTICLES, particlesPos, GL_DYNAMIC_COPY);
+    
+    // Return
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	
-	
+    
 	opencl.loadProgramFromFile("MSAOpenCL/Particle.cl");
 	kernelUpdate = opencl.loadKernel("updateParticle");
 	
@@ -85,8 +93,13 @@ void testApp::setup(){
 	kernelUpdate->setArg(1, clMemPosVBO.getCLMem());
 	kernelUpdate->setArg(2, mousePos);
 	kernelUpdate->setArg(3, dimensions);
-	
+
+	// Set opengl parameters
 	glPointSize(POINT_SIZE);
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_POINT_SMOOTH);
 }
 
 
@@ -104,22 +117,29 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_POINT_SMOOTH);
 
 	glColor4f(0.0f, 1.0f, 1.0f, 0.1f);
-	glBindBufferARB(GL_ARRAY_BUFFER_ARB, vbo[0]);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
+    
 #ifdef USE_OPENGL_CONTEXT
 	opencl.finish();
 #else	
 	opencl.readBuffer(sizeof(Vec2) * NUM_PARTICLES, clMemPosVBO, particlesPos);
-	glBufferSubDataARB(GL_ARRAY_BUFFER_ARB, 0, sizeof(Vec2) * NUM_PARTICLES, particlesPos);
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(Vec2) * NUM_PARTICLES, particlesPos);
 #endif	
+    
+    // Vertex array
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glVertexPointer(2, GL_FLOAT, 0, 0);
+    
+    // Color array
+    // Set random particle colors
+//    glEnableClientState(GL_COLOR_ARRAY);
+//    glColorPointer(4, GL_FLOAT, 0, 0);
+    
 	glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
-	glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
+    
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	
 	
 	glColor3f(1, 1, 1);
