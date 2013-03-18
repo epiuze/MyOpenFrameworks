@@ -65,9 +65,9 @@ void testApp::setup(){
 	}
 	
 	glGenBuffersARB(1, vbo);
-	glBindBufferARB(GL_ARRAY_BUFFER_ARB, vbo[0]);
-	glBufferDataARB(GL_ARRAY_BUFFER_ARB, sizeof(float2) * NUM_PARTICLES, particlesPos, GL_DYNAMIC_COPY_ARB);
-	glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float2) * NUM_PARTICLES, particlesPos, GL_DYNAMIC_COPY_ARB);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	
 	
 	opencl.loadProgramFromFile("MSAOpenCL/Particle.cl");
